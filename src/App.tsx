@@ -21,7 +21,8 @@ import { courseExercises } from './data/exerciseData';
 import { UserProgress } from './types';
 import { 
   Play, BookOpen, Activity, PenTool, Flame, ArrowRight, 
-  ShieldAlert, BookOpenCheck, ClipboardCheck, Sparkles, Trophy
+  ShieldAlert, BookOpenCheck, ClipboardCheck, Sparkles, Trophy,
+  Youtube, Instagram, Globe, Mail
 } from 'lucide-react';
 
 export default function App() {
@@ -568,9 +569,75 @@ export default function App() {
       </main>
 
       {/* Styled Responsive Footer */}
-      <footer className="bg-neutral-950 border-t border-neutral-900 py-8 text-center text-[10px] sm:text-xs text-neutral-600 font-mono w-full select-none mt-auto">
-        <p>BATALHA ESPIRITUAL • PORTAL COMPLETO DE CURSOS E EXERCÍCIOS</p>
-        <p className="mt-1 text-[10px] text-neutral-700">© CFAP - SARA NOSSA TERRA | SUÍTE INSPIRADA NA ESTÉTICA NETFLIX</p>
+      <footer className="bg-neutral-950 border-t border-neutral-900 py-12 text-neutral-400 font-sans w-full mt-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
+            <span className="text-sm font-black tracking-wider text-red-655 uppercase">
+              Batalha Espiritual
+            </span>
+            <p className="text-xs text-neutral-500">
+              © {new Date().getFullYear()} CFAP - Sara Nossa Terra. Todos os direitos reservados.
+            </p>
+            <p className="text-[11px] text-neutral-600 max-w-md mt-1">
+              Plataforma teológica avançada para capacitação ministerial, libertação e autodiagnóstico espiritual consanguíneo.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center md:items-end gap-3">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-neutral-500">
+              Conecte-se conosco / Redes Sociais
+            </span>
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://www.youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 hover:border-red-600 text-neutral-400 hover:text-red-500 flex items-center justify-center transition-all hover:scale-105"
+                title="Inscreva-se no Youtube"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 hover:border-pink-600 text-neutral-400 hover:text-pink-500 flex items-center justify-center transition-all hover:scale-105"
+                title="Siga no Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://saranossaterra.com.br" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 hover:border-emerald-600 text-neutral-400 hover:text-emerald-500 flex items-center justify-center transition-all hover:scale-105"
+                title="Visite nosso Website"
+              >
+                <Globe className="w-4 h-4" />
+              </a>
+              <a 
+                href="mailto:contato@saranossaterra.com.br" 
+                className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 hover:border-blue-600 text-neutral-400 hover:text-blue-500 flex items-center justify-center transition-all hover:scale-105"
+                title="Envie um E-mail"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-neutral-900/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-neutral-600">
+          <div className="flex items-center gap-4">
+            <span className="hover:text-neutral-400 transition-colors cursor-pointer">Termos de Uso</span>
+            <span className="hover:text-neutral-400 transition-colors cursor-pointer">Política de Privacidade</span>
+            <span className="hover:text-neutral-400 transition-colors cursor-pointer">Suporte</span>
+          </div>
+          <div>
+            <span>Desenvolvido com excelência e integridade espiritual</span>
+          </div>
+        </div>
       </footer>
     </div>
   );
