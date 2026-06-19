@@ -59,18 +59,27 @@ export interface UserProgress {
       nome: string;
       sexo: string;
       idade: string;
+      endereco?: string;
+      bairro?: string;
+      cidade?: string;
+      fone?: string;
       estadoCivil: string;
+      numFilhos?: string;
       profissao: string;
+      escolaridade?: string;
+      religiaoAnterior?: string;
+      tempoConvertido?: string;
+      tempoBatismo?: string;
+      jaUsouDrogas?: string;
+      tinhaVicios?: string;
+      quaisVicios?: string;
+      tomaMedicamentos?: string;
+      paraQueMedicamentos?: string;
+      saudeHoje?: string;
+      desequilibriosEmocionais?: string;
+      fezTerapia?: string;
     };
     checkedItems: string[]; // list of item strings selected across categories
-    textAnswers: {
-      relacionamentoFamiliar: string;
-      motivosQuebra: string;
-      relacionamentoPais: string;
-      traumasPassado: string;
-      compulsoesAmaldicoar: string;
-      repulsaBiblia: string;
-      pensamentosSuicidio: string;
-    };
+    textAnswers: Record<string, string>; // Flexible record to store all textual answers (Q1 to Q26 + custom questions)
   };
 }
