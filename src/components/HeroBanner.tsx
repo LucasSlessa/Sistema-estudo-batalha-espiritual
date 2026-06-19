@@ -48,16 +48,16 @@ export default function HeroBanner({ progress, onPlayClick, onDiagnosticoClick, 
 
         {/* Cinematic Title Block */}
         <div className="flex flex-col">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-black tracking-tighter text-white drop-shadow-lg leading-tight uppercase">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-black tracking-tighter text-white drop-shadow-lg leading-tight uppercase">
             BATALHA ESPIRITUAL
           </h1>
-          <p className="text-xs sm:text-sm font-mono font-semibold text-yellow-500 uppercase tracking-widest leading-none mt-1">
+          <p className="text-[10px] sm:text-sm font-mono font-semibold text-yellow-500 uppercase tracking-widest leading-none mt-1.5">
             Curso de Libertação, Proteção e Autoridade em Cristo
           </p>
         </div>
 
         {/* Short Concept description */}
-        <p className="max-w-xl text-xs sm:text-sm text-neutral-300 line-clamp-3 filter drop-shadow font-sans subpixel-antialiased">
+        <p className="max-w-xl text-[11px] sm:text-sm text-neutral-300 line-clamp-3 sm:line-clamp-none filter drop-shadow font-sans subpixel-antialiased leading-relaxed">
           Aprenda a mapear e anular bloqueios, heranças de iniquidades consanguíneas, 
           identificar principados territoriais e se vestir com a Armadura de Deus para expulsar 
           fortalezas sobre a mente, corpo e finanças.

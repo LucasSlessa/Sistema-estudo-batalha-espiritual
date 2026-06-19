@@ -230,7 +230,7 @@ export default function App() {
                     </div>
                     
                     {/* Navigation controllers */}
-                    <div className="flex items-center gap-2">
+                    <div className="hidden sm:flex items-center gap-2">
                       <button 
                         onClick={() => scrollContainer(watchedScrollRef, 'left')}
                         className="bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white p-2.5 rounded transition-all active:scale-95 text-xs font-bold font-mono tracking-tight cursor-pointer"
@@ -250,59 +250,47 @@ export default function App() {
 
                   <div 
                     ref={watchedScrollRef}
-                    className="flex overflow-x-auto gap-6 mt-1 pb-4 scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-transparent scroll-smooth snap-x snap-mandatory"
+                    className="flex overflow-x-auto gap-4 mt-1 pb-4 no-scrollbar scroll-smooth snap-x snap-mandatory"
                   >
                     {watched.map((item, idx) => (
                       <div 
                         key={`${item.chapterId}_${item.lessonIndex}_${idx}`}
-                        className="w-[260px] sm:w-[295px] shrink-0 snap-start bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col shadow-md hover:border-neutral-700 transition-all duration-300 relative group"
+                        onClick={() => handleStartStudy(item.chapterId, item.lessonIndex)}
+                        className="w-[180px] sm:w-[220px] shrink-0 snap-start bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col shadow-md hover:border-red-650 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)] transition-all duration-305 relative group cursor-pointer"
                       >
                         <div className="relative aspect-video bg-neutral-950">
                           <img 
                             src={item.thumbnail} 
                             alt={item.lessonTitle}
                             referrerPolicy="no-referrer"
-                            className="w-full h-full object-cover object-center brightness-60 group-hover:brightness-40 transition-all duration-300"
+                            className="w-full h-full object-cover object-center brightness-90 group-hover:brightness-50 transition-all duration-300"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 to-transparent"></div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 to-transparent"></div>
                           
                           {/* Play button hover state */}
-                          <div 
-                            onClick={() => handleStartStudy(item.chapterId, item.lessonIndex)}
-                            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer duration-300"
-                          >
-                            <div className="w-11 h-11 rounded-full bg-red-650 flex items-center justify-center text-white shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300">
-                              <Play className="w-5 h-5 fill-current translate-x-0.5" />
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="w-8 h-8 rounded-full bg-red-650 flex items-center justify-center text-white shadow-lg">
+                              <Play className="w-3.5 h-3.5 fill-current translate-x-0.5" />
                             </div>
                           </div>
 
-                          <span className="absolute bottom-2 left-2 bg-neutral-950/80 text-neutral-300 font-mono text-[8px] font-bold px-1.5 py-0.5 rounded leading-none uppercase">
-                            Fascículo {item.chapterNumber} • Aula {item.lessonIndex + 1}
+                          <span className="absolute bottom-2 left-2 bg-neutral-950/85 text-neutral-300 font-mono text-[7px] font-bold px-1 py-0.5 rounded leading-none uppercase">
+                            Fasc. {item.chapterNumber} • Aula {item.lessonIndex + 1}
                           </span>
-                        </div>
 
-                        <div className="p-3.5 flex flex-col gap-1 flex-grow">
-                          <h3 className="text-xs font-sans font-black text-white tracking-tight uppercase truncate">
-                            {item.lessonTitle}
-                          </h3>
-                          <p className="text-[10px] text-neutral-500 font-sans truncate uppercase tracking-tight">
-                            {item.chapterTitle}
-                          </p>
-
-                          {/* Red visual progression line */}
-                          <div className="w-full h-1 bg-neutral-800 rounded-full mt-2 relative overflow-hidden">
+                          {/* Progression indicator at bottom of image like real Netflix */}
+                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-neutral-800">
                             <div 
-                              className="absolute left-0 h-full bg-red-650 rounded-full" 
+                              className="h-full bg-red-650" 
                               style={{ width: `${item.progressPercent}%` }}
                             ></div>
                           </div>
-                          
-                          <div className="flex items-center justify-between mt-1 text-[9px] font-mono text-neutral-500">
-                            <span>{item.progressPercent}% concluído</span>
-                            <span className="text-[8px] text-red-500 font-bold uppercase transition-transform group-hover:translate-x-1 cursor-pointer" onClick={() => handleStartStudy(item.chapterId, item.lessonIndex)}>
-                              Retomar &rarr;
-                            </span>
-                          </div>
+                        </div>
+
+                        <div className="p-2 flex flex-col gap-0.5">
+                          <h3 className="text-[11px] font-sans font-bold text-neutral-200 tracking-tight uppercase truncate group-hover:text-white transition-colors">
+                            {item.lessonTitle}
+                          </h3>
                         </div>
                       </div>
                     ))}
@@ -322,7 +310,7 @@ export default function App() {
                 </div>
 
                 {/* Left/Right Buttons for Módulos row */}
-                <div className="flex items-center gap-2">
+                <div className="hidden sm:flex items-center gap-2">
                   <button 
                     onClick={() => scrollContainer(modulesScrollRef, 'left')}
                     className="bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white p-2.5 rounded transition-all active:scale-95 text-xs font-bold font-mono tracking-tight cursor-pointer"
@@ -342,39 +330,30 @@ export default function App() {
 
               <div 
                 ref={modulesScrollRef}
-                className="flex overflow-x-auto gap-6 mt-1 pb-4 scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-transparent scroll-smooth snap-x snap-mandatory"
+                className="flex overflow-x-auto gap-4 mt-1 pb-4 no-scrollbar scroll-smooth snap-x snap-mandatory"
               >
                 {courseChapters.map((ch) => (
                   <div 
                     key={ch.id}
-                    className="w-[280px] sm:w-[310px] shrink-0 snap-start bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col shadow-md hover:border-neutral-700 transition-all duration-350"
+                    onClick={() => handleStartStudy(ch.id)}
+                    className="w-[180px] sm:w-[220px] shrink-0 snap-start bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col shadow-md hover:border-red-650 hover:shadow-[0_0_15px_rgba(220,38,38,0.25)] transition-all duration-300 group cursor-pointer"
                   >
-                    <div className="relative aspect-video bg-neutral-950">
+                    <div className="relative aspect-video bg-neutral-950 overflow-hidden">
                       <img 
                         src={ch.thumbnail} 
                         alt={ch.title}
                         referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover object-center brightness-90 saturate-85"
+                        className="w-full h-full object-cover object-center brightness-90 group-hover:brightness-50 group-hover:scale-105 transition-all duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 to-transparent"></div>
-                      <span className="absolute bottom-2 left-2 bg-red-650 text-white font-mono text-[9px] font-bold px-1.5 py-0.5 rounded leading-none">
+                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 to-transparent"></div>
+                      <span className="absolute bottom-2 left-2 bg-red-650/90 text-white font-mono text-[8px] font-bold px-1.5 py-0.5 rounded leading-none">
                         FASCÍCULO {ch.number}
                       </span>
                     </div>
-                    <div className="p-4 flex flex-col gap-1.5 flex-grow">
-                      <h3 className="text-sm font-sans font-black text-white tracking-tight uppercase line-clamp-1">
+                    <div className="p-2 flex flex-col gap-0.5 flex-grow justify-center">
+                      <h3 className="text-[11px] font-sans font-bold text-neutral-200 tracking-tight uppercase truncate group-hover:text-red-500 transition-colors">
                         {ch.title}
                       </h3>
-                      <p className="text-xs text-neutral-400 font-sans line-clamp-2 text-justify">
-                        {ch.summary}
-                      </p>
-                      
-                      <button
-                        onClick={() => handleStartStudy(ch.id)}
-                        className="flex items-center justify-center gap-1.5 mt-auto pt-3 border-t border-neutral-800 font-mono text-[10px] font-bold text-red-500 hover:text-white transition-colors cursor-pointer"
-                      >
-                        Estudar Fase <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
-                      </button>
                     </div>
                   </div>
                 ))}
@@ -569,7 +548,7 @@ export default function App() {
       </main>
 
       {/* Styled Responsive Footer */}
-      <footer className="bg-neutral-950 border-t border-neutral-900 py-12 text-neutral-400 font-sans w-full mt-auto">
+      <footer className="bg-neutral-950 border-t border-neutral-900 pt-12 pb-24 md:py-12 text-neutral-400 font-sans w-full mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           
           <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
