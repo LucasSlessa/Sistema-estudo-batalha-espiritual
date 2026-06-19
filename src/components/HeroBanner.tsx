@@ -1,0 +1,99 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import React from 'react';
+import { Play, ClipboardCheck, History, Award } from 'lucide-react';
+import { UserProgress } from '../types';
+
+interface HeroBannerProps {
+  progress: UserProgress;
+  onPlayClick: () => void;
+  onDiagnosticoClick: () => void;
+  onAnneliseClick: () => void;
+}
+
+export default function HeroBanner({ progress, onPlayClick, onDiagnosticoClick, onAnneliseClick }: HeroBannerProps) {
+  const hasStarted = progress.completedLessons.length > 0;
+
+  return (
+    <div className="relative w-full aspect-[21/9] sm:aspect-[16/7] md:aspect-[2.4/1] min-h-[300px] overflow-hidden bg-neutral-950 flex items-end">
+      {/* Absolute image overlay with horizontal/vertical fading */}
+      <img
+        src="/src/assets/images/hero_warfare_banner_1781825214647.jpg"
+        alt="Batalha Espiritual Hero Banner"
+        referrerPolicy="no-referrer"
+        className="absolute inset-0 w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-110"
+      />
+      {/* Gradients to blend image cleanly with dark layout */}
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/50 to-transparent"></div>
+
+      {/* Floating Meta Brand Banner */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-6 sm:pb-12 md:pb-16 pt-32 flex flex-col items-start gap-3 sm:gap-4">
+        
+        {/* Dynamic Netflix Badges */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="flex items-center gap-1 bg-red-700/80 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shadow">
+            <Award className="w-3 h-3 text-yellow-400" /> Original CFAP
+          </span>
+          <span className="bg-neutral-800/95 text-yellow-400 border border-neutral-700 font-mono text-[10px] font-bold px-2 py-0.5 rounded tracking-wider">
+            SARA NOSSA TERRA
+          </span>
+          <span className="text-neutral-300 font-mono text-xs hidden sm:inline-block">
+            Libertação e Quebra de Maldições
+          </span>
+        </div>
+
+        {/* Cinematic Title Block */}
+        <div className="flex flex-col">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-black tracking-tighter text-white drop-shadow-lg leading-tight uppercase">
+            BATALHA ESPIRITUAL
+          </h1>
+          <p className="text-xs sm:text-sm font-mono font-semibold text-yellow-500 uppercase tracking-widest leading-none mt-1">
+            Curso de Libertação, Proteção e Autoridade em Cristo
+          </p>
+        </div>
+
+        {/* Short Concept description */}
+        <p className="max-w-xl text-xs sm:text-sm text-neutral-300 line-clamp-3 filter drop-shadow font-sans subpixel-antialiased">
+          Aprenda a mapear e anular bloqueios, heranças de iniquidades consanguíneas, 
+          identificar principados territoriais e se vestir com a Armadura de Deus para expulsar 
+          fortalezas sobre a mente, corpo e finanças.
+        </p>
+
+        {/* Playable buttons */}
+        <div className="flex flex-wrap items-center gap-3 mt-2 sm:mt-4 w-full sm:w-auto">
+          {/* Main Study Continuation Trigger */}
+          <button
+            onClick={onPlayClick}
+            className="flex items-center justify-center gap-2 bg-white text-neutral-950 hover:bg-neutral-200 active:scale-95 transition-all px-4 sm:px-6 py-2.5 sm:py-3 rounded font-bold text-sm shadow-lg w-full sm:w-auto text-center"
+          >
+            <Play className="w-4 h-4 fill-current" />
+            {hasStarted ? 'Continuar Curso' : 'Começar do Capítulo 1'}
+          </button>
+
+          {/* Quick Questionnaire Shortcut */}
+          <button
+            onClick={onDiagnosticoClick}
+            className="flex items-center justify-center gap-2 bg-neutral-900/90 text-neutral-100 hover:bg-neutral-800 border border-neutral-700 active:scale-95 transition-all px-4 sm:px-5 py-2.5 sm:py-3 rounded font-semibold text-sm shadow-md w-full sm:w-auto text-center"
+          >
+            <ClipboardCheck className="w-4 h-4 text-red-500" />
+            Auto-Questionário
+          </button>
+
+          {/* Historical Case study */}
+          <button
+            onClick={onAnneliseClick}
+            className="flex items-center justify-center gap-2 bg-neutral-900/60 text-neutral-300 hover:bg-neutral-800/80 hover:text-white border border-neutral-800 active:scale-95 transition-all px-4 sm:px-4 py-2 sm:py-2.5 rounded font-medium text-xs shadow-sm w-full sm:w-auto text-center"
+          >
+            <History className="w-3.5 h-3.5 text-neutral-400" />
+            Caso Annelise Michel
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+}
