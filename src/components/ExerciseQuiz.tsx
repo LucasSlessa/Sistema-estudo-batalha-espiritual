@@ -10,6 +10,9 @@ import {
   HelpCircle, Eye, Sparkles, BookOpen, AlertCircle
 } from 'lucide-react';
 import { ExerciseGroup, Question, UserProgress } from '../types';
+import theologyManual from '../assets/images/theology_manual_1781826901454.jpg';
+import doctrinesManual from '../assets/images/doctrines_manual_1781826911469.jpg';
+import deliverancePrayers from '../assets/images/deliverance_prayers_1781826920049.jpg';
 
 interface ExerciseQuizProps {
   exerciseGroups: ExerciseGroup[];
@@ -300,9 +303,9 @@ export default function ExerciseQuiz({ exerciseGroups, progress, onSaveProgress 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {exerciseGroups.map((group) => {
                 const groupImages: Record<number, string> = {
-                  1: '/src/assets/images/theology_manual_1781826901454.jpg',
-                  2: '/src/assets/images/doctrines_manual_1781826911469.jpg',
-                  3: '/src/assets/images/deliverance_prayers_1781826920049.jpg'
+                  1: theologyManual,
+                  2: doctrinesManual,
+                  3: deliverancePrayers
                 };
                 const cardImage = groupImages[group.id] || 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=640';
 

@@ -6,6 +6,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { History, ShieldAlert, Award, FileText, Calendar, Info, Film, Flame } from 'lucide-react';
+import theologyManual from '../assets/images/theology_manual_1781826901454.jpg';
 
 interface AnneliseStoryProps {
   onBackToHome: () => void;
@@ -34,7 +35,7 @@ export default function AnneliseStory({ onBackToHome }: AnneliseStoryProps) {
       {/* Featured Header Documentary Style */}
       <div className="relative rounded-xl overflow-hidden bg-neutral-900 border border-neutral-800 p-6 sm:p-8 flex flex-col md:flex-row gap-6 mb-8 shadow-xl">
         <img 
-          src="/src/assets/images/theology_manual_1781826901454.jpg" 
+          src={theologyManual} 
           alt="Annelise Case documentation" 
           referrerPolicy="no-referrer"
           className="w-full md:w-48 aspect-video md:aspect-[3/4] object-cover rounded-lg shrink-0 filter grayscale hover:grayscale-0 transition-all duration-500 shadow-md"
@@ -87,7 +88,7 @@ export default function AnneliseStory({ onBackToHome }: AnneliseStoryProps) {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowFullScreen
-            referrerPolicy="no-referrer"
+            referrerPolicy="strict-origin-when-cross-origin"
             className="absolute inset-0 w-full h-full"
           ></iframe>
         </div>

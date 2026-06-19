@@ -12,7 +12,7 @@ export const courseChapters: Chapter[] = [
     title: "A Realidade da Guerra",
     slug: "realidade-da-guerra",
     summary: "Compreenda as bases da batalha espiritual na terra, os ninhos e sandálias do evangelho, táticas inimigas, conceitos de colisão e o porquê de termos a vitória assegurada em Cristo.",
-    thumbnail: "/src/assets/images/hero_warfare_banner_1781825214647.jpg",
+    thumbnail: new URL('../assets/images/hero_warfare_banner_1781825214647.jpg', import.meta.url).href,
     quote: {
       text: "O Senhor é Homem de Guerra; Senhor dos Exércitos é o seu nome",
       reference: "Êxodo 15:3"
@@ -159,7 +159,7 @@ export const courseChapters: Chapter[] = [
     title: "As Armas dos Guerreiros",
     slug: "as-armas",
     summary: "Um estudo estratégico sobre as armas ofensivas e defensivas reveladas na Bíblia para aniquilar as fortalezas inimigas sob os nossos pés.",
-    thumbnail: "/src/assets/images/armor_of_god_1781825226449.jpg",
+    thumbnail: new URL('../assets/images/armor_of_god_1781825226449.jpg', import.meta.url).href,
     quote: {
       text: "As armas da nossa milícia não são carnais, mas poderosas em Deus para destruição de fortalezas.",
       reference: "2 Coríntios 10:4"
@@ -278,7 +278,7 @@ export const courseChapters: Chapter[] = [
     title: "Endemoninhamento",
     slug: "endemoninhamento",
     summary: "Compreenda os níveis de possessão e opressão, a constituição dos laços de alma e como a transferência de espíritos ocorre através de contatos impróprios.",
-    thumbnail: "/src/assets/images/demon_possession_1781826931244.jpg",
+    thumbnail: new URL('../assets/images/demon_possession_1781826931244.jpg', import.meta.url).href,
     quote: {
       text: "Daimonizomai: o estado de estar sob o controle ou sob o poder de seres imundos.",
       reference: "Dicionário do Grego Bíblico"
@@ -340,7 +340,7 @@ export const courseChapters: Chapter[] = [
     title: "A Expulsão de Demônios",
     slug: "expulsao",
     summary: "Aprenda o passo a passo ministerial para conduzir sessões de libertação eficazes de forma segura, coordenada e sem escândalos públicos.",
-    thumbnail: "/src/assets/images/broken_spiritual_chains_1781825237726.jpg",
+    thumbnail: new URL('../assets/images/broken_spiritual_chains_1781825237726.jpg', import.meta.url).href,
     quote: {
       text: "Em meu nome expulsarão demônios...",
       reference: "Marcos 16:17"
@@ -401,7 +401,7 @@ export const courseChapters: Chapter[] = [
     title: "Questões Diversas",
     slug: "questoes-diversas",
     summary: "Seção teológica e de discernimento de casos bíblicos intrigantes, como poltergeists, a situação de Saul e a possessão em crentes.",
-    thumbnail: "/src/assets/images/holy_bible_glow_1781825247539.jpg",
+    thumbnail: new URL('../assets/images/holy_bible_glow_1781825247539.jpg', import.meta.url).href,
     quote: {
       text: "Conhecereis a verdade, e a verdade vos libertará.",
       reference: "João 8:32"
@@ -450,7 +450,7 @@ export const courseChapters: Chapter[] = [
     title: "Quebra de Maldições",
     slug: "quebra-de-maldicoes",
     summary: "Estudo aprofundado sobre heranças familiares hereditárias, causas de maldições e como quebrar verbalmente ataduras espirituais.",
-    thumbnail: "/src/assets/images/broken_spiritual_chains_1781825237726.jpg",
+    thumbnail: new URL('../assets/images/broken_spiritual_chains_1781825237726.jpg', import.meta.url).href,
     quote: {
       text: "Cristo nos resgatou da maldição da lei, fazendo-se maldição por nós...",
       reference: "Gálatas 3:13"

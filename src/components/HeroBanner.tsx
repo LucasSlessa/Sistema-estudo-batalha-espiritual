@@ -6,6 +6,7 @@
 import React from 'react';
 import { Play, ClipboardCheck, History, Award } from 'lucide-react';
 import { UserProgress } from '../types';
+import heroWarfareBanner from '../assets/images/hero_warfare_banner_1781825214647.jpg';
 
 interface HeroBannerProps {
   progress: UserProgress;
@@ -21,7 +22,7 @@ export default function HeroBanner({ progress, onPlayClick, onDiagnosticoClick, 
     <div className="relative w-full aspect-[21/9] sm:aspect-[16/7] md:aspect-[2.4/1] min-h-[300px] overflow-hidden bg-neutral-950 flex items-end">
       {/* Absolute image overlay with horizontal/vertical fading */}
       <img
-        src="/src/assets/images/hero_warfare_banner_1781825214647.jpg"
+        src={heroWarfareBanner}
         alt="Batalha Espiritual Hero Banner"
         referrerPolicy="no-referrer"
         className="absolute inset-0 w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-110"

@@ -6,6 +6,7 @@
 import React from 'react';
 import { Shield, BookOpen, PenTool, Activity, Flame, Trophy, Award } from 'lucide-react';
 import { UserProgress } from '../types';
+import systemLogo from '../assets/images/system_logo_1781827622851.jpg';
 
 interface NavbarProps {
   currentTab: string;
@@ -51,7 +52,7 @@ export default function Navbar({ currentTab, setCurrentTab, progress, totalLesso
             >
               <div className="w-10 h-10 rounded-lg overflow-hidden border border-neutral-800 flex items-center justify-center bg-black transition-all group-hover:border-red-600 shadow-[0_0_15px_rgba(185,28,28,0.2)]">
                 <img 
-                  src="/src/assets/images/system_logo_1781827622851.jpg" 
+                  src={systemLogo} 
                   alt="System Logo" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
