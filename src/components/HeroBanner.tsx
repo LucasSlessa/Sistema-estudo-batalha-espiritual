@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Play, ClipboardCheck, History, Award } from 'lucide-react';
+import { Play, ClipboardCheck, History, Award, Shield } from 'lucide-react';
 import { UserProgress } from '../types';
 import heroWarfareBanner from '../assets/images/hero_warfare_banner_1781825214647.jpg';
 
@@ -36,14 +36,8 @@ export default function HeroBanner({ progress, onPlayClick, onDiagnosticoClick, 
         
         {/* Dynamic Netflix Badges */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="flex items-center gap-1 bg-red-700/80 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shadow">
-            <Award className="w-3 h-3 text-yellow-400" /> Original CFAP
-          </span>
-          <span className="bg-neutral-800/95 text-yellow-400 border border-neutral-700 font-mono text-[10px] font-bold px-2 py-0.5 rounded tracking-wider">
-            SARA NOSSA TERRA
-          </span>
-          <span className="text-neutral-300 font-mono text-xs hidden sm:inline-block">
-            Libertação e Quebra de Maldições
+          <span className="flex items-center gap-1.5 bg-neutral-900/90 text-amber-500 border border-neutral-800/80 font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+            <Shield className="w-3.5 h-3.5 text-red-500" /> Libertação e Quebra de Maldições
           </span>
         </div>
 

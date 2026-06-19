@@ -34,7 +34,7 @@ export default function LessonReader({
   // Navigation states
   const [activeChapter, setActiveChapter] = useState<Chapter | null>(null);
   const [activeLessonIndex, setActiveLessonIndex] = useState<number>(-1);
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [playbackTime, setPlaybackTime] = useState<number>(0);
   const [playbackSpeed, setPlaybackSpeed] = useState<number>(1);
   const [useAINarration, setUseAINarration] = useState<boolean>(true);
@@ -66,7 +66,7 @@ export default function LessonReader({
   // Load notes from localStorage whenever lesson changes
   useEffect(() => {
     if (activeChapter && activeLessonIndex >= 0) {
-      setIsPlaying(true);
+      setIsPlaying(false);
       setPlaybackTime(0);
       const noteKey = `batalha_notes_${activeChapter.id}_${activeLessonIndex}`;
       const savedNotes = localStorage.getItem(noteKey) || '';
@@ -614,7 +614,7 @@ export default function LessonReader({
                         onClick={() => setActiveLessonIndex(prev => prev + 1)}
                         className="text-xs font-mono text-red-500 hover:text-white font-bold transition-all flex items-center gap-1.5"
                       >
-                        Siguiente Aula <ArrowRight className="w-4 h-4" />
+                        Próxima aula <ArrowRight className="w-4 h-4" />
                       </button>
                     ) : (
                       <button 
