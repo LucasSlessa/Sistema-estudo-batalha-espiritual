@@ -302,8 +302,7 @@ export default function App() {
             {/* Sliding Row 1: Módulos do Curso (Chapters) */}
             <div className="px-4 sm:px-8 max-w-7xl mx-auto w-full flex flex-col gap-4">
               <div className="flex items-center justify-between border-l-4 border-red-650 pl-3">
-                <div className="flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-red-500" />
+                <div className="flex items-center">
                   <h2 className="text-base sm:text-lg font-sans font-black text-white uppercase tracking-tight">
                     Módulos de Estudo
                   </h2>
@@ -362,8 +361,7 @@ export default function App() {
 
             {/* Sliding Row 2: Manuais de Intervenção Prática (Prayers, Cases) */}
             <div className="px-4 sm:px-8 max-w-7xl mx-auto w-full flex flex-col gap-4 mt-4">
-              <div className="flex items-center gap-2 border-l-4 border-red-650 pl-3">
-                <Activity className="w-5 h-5 text-red-500" />
+              <div className="flex items-center border-l-4 border-red-650 pl-3">
                 <h2 className="text-base sm:text-lg font-sans font-black text-white uppercase tracking-tight">
                   Manuais e Sessões Práticas
                 </h2>
@@ -448,8 +446,7 @@ export default function App() {
 
             {/* Sliding Row 3: Quizzes de Revisão */}
             <div className="px-4 sm:px-8 max-w-7xl mx-auto w-full flex flex-col gap-4 mt-4">
-              <div className="flex items-center gap-2 border-l-4 border-red-650 pl-3">
-                <Trophy className="w-5 h-5 text-red-500" />
+              <div className="flex items-center border-l-4 border-red-650 pl-3">
                 <h2 className="text-base sm:text-lg font-sans font-black text-white uppercase tracking-tight">
                   Quizzes de Fixação
                 </h2>

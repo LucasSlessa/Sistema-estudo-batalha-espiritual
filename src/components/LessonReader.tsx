@@ -643,8 +643,7 @@ export default function LessonReader({
       
       {/* Return to home screen */}
       <div className="flex items-center justify-between mb-8 border-b border-neutral-800 pb-4">
-        <div className="flex items-center gap-2">
-          <BookOpen className="w-6 h-6 text-red-500" />
+        <div className="flex items-center">
           <h1 className="text-xl sm:text-2xl font-sans font-black tracking-tight uppercase">
             Módulos do Curso
           </h1>

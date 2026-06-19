@@ -174,8 +174,8 @@ export default function BodyMapUnction() {
       
       {/* Intro Header */}
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <span className="text-xs font-mono text-yellow-500 font-bold uppercase tracking-widest flex items-center justify-center gap-1.5 mb-1 bg-neutral-900 border border-neutral-800 rounded px-3 py-1 w-fit mx-auto">
-          <Sparkles className="w-4 h-4 text-yellow-400" /> ANEXO 2 • SÉRIE PRÁTICA
+        <span className="text-xs font-mono text-yellow-500 font-bold uppercase tracking-widest flex items-center justify-center mb-1 bg-neutral-900 border border-neutral-800 rounded px-3 py-1 w-fit mx-auto">
+          ANEXO 2 • SÉRIE PRÁTICA
         </span>
         <h1 className="text-2xl sm:text-3xl font-sans font-black tracking-tight text-white uppercase mt-2">
           Unção Corporal de Libertação

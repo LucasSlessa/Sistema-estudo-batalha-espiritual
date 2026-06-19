@@ -490,8 +490,7 @@ export default function DiagnosticForm({ progress, onSaveProgress }: DiagnosticF
           
           {/* STEP HEADER */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-neutral-800 pb-4">
-            <div className="flex items-center gap-2">
-              <Dna className="w-6 h-6 text-red-500 animate-pulse" />
+            <div className="flex items-center">
               <h1 className="text-lg sm:text-xl font-sans font-black tracking-tight uppercase text-white">
                 Ficha Geral de Diagnóstico Clínico-Espiritual
               </h1>

@@ -71,19 +71,17 @@ export default function Navbar({ currentTab, setCurrentTab, progress, totalLesso
             {/* Navigation Links */}
             <nav className="hidden md:flex space-x-1 lg:space-x-2">
               {navItems.map((item) => {
-                const Icon = item.icon;
                 const isActive = currentTab === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => setCurrentTab(item.id)}
-                    className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                    className={`flex items-center px-4 py-2 rounded-md text-sm font-medium transition-all ${
                       isActive
                         ? 'bg-neutral-800 text-white border-b-2 border-red-600 shadow-inner'
                         : 'text-neutral-400 hover:bg-neutral-900 hover:text-neutral-100'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
                     {item.label}
                   </button>
                 );
@@ -137,23 +135,21 @@ export default function Navbar({ currentTab, setCurrentTab, progress, totalLesso
       </header>
 
       {/* Mobile Bottom Navigation Bar */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-neutral-950/95 backdrop-blur-md border-t border-neutral-900/80 px-2 py-2 flex items-center justify-around pb-[calc(env(safe-area-inset-bottom)+8px)]">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-neutral-950/95 backdrop-blur-md border-t border-neutral-900/80 px-2 py-3 flex items-center justify-around pb-[calc(env(safe-area-inset-bottom)+12px)]">
         {navItems.map((item) => {
-          const Icon = item.icon;
           const isActive = currentTab === item.id;
           return (
             <button
               key={item.id}
               onClick={() => setCurrentTab(item.id)}
-              className={`flex flex-col items-center gap-1 py-1 px-2 select-none active:scale-95 transition-all relative w-1/4 ${
+              className={`flex flex-col items-center py-1 px-1 select-none active:scale-95 transition-all relative w-1/4 ${
                 isActive ? 'text-red-500 font-bold' : 'text-neutral-400'
               }`}
             >
               {isActive && (
-                <span className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-red-600 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.8)] animate-pulse" />
+                <span className="absolute -top-[10px] left-1/2 -translate-x-1/2 w-8 h-[2px] bg-red-600 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.8)] animate-pulse" />
               )}
-              <Icon className={`w-5 h-5 transition-transform duration-200 ${isActive ? 'scale-110 text-red-500' : 'text-neutral-550'}`} />
-              <span className="text-[9px] font-normal tracking-tight">
+              <span className="text-[10px] font-sans font-bold tracking-tight uppercase">
                 {item.label}
               </span>
             </button>
